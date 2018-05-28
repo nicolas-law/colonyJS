@@ -12,18 +12,29 @@ jobs:
             - v1-dependencies-{{ checksum "yarn.lock" }}
             - v1-dependencies-
 
+      - restore_cache:
+          keys:
+            - v1-colonyDapp-b801772ccd02240b9c7a337696896c5d3814d22d
+
       - run: |
           yarn global add greenkeeper-lockfile@1
           yarn install
           yarn run lerna link
           yarn run lerna run build
+          yarn run install:colonyDapp
 
       - save_cache:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "yarn.lock" }}
 
+      - save_cache:
+          paths:
+            - colonyDapp
+          key: v1-colonyDapp-b801772ccd02240b9c7a337696896c5d3814d22d
+
       - run: |
           $HOME/.config/yarn/global/node_modules/.bin/greenkeeper-lockfile-update
           yarn test
+          yarn test:colonyDapp
           $HOME/.config/yarn/global/node_modules/.bin/greenkeeper-lockfile-upload

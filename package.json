@@ -42,6 +42,8 @@
     "scripts": {
         "lint": "run(){ eslint --ignore-pattern=**/{node_modules,dist,lib}/* --fix ${@:-\"packages/**/src/{,**/}*.js\"}; }; run",
         "precommit": "lerna run --concurrency 1 --stream precommit",
+        "provision:colonyDapp": "sh scripts/provision-colonyDapp.sh",
+        "test:colonyDapp": "run(){ cd colonyDapp && yarn run test:integration:ci }",
         "test": "flow check && lerna run test"
     },
     "workspaces": [
