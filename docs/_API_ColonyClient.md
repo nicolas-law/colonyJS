@@ -34,7 +34,7 @@ Helper function used to generate the rating secret used in task ratings. Accepts
 |Argument|Type|Description|
 |---|---|---|
 |salt|string|Salt value|
-|value|number|Value to hide|
+|value|BigNumber|Value to hide|
 
 **Returns**
 

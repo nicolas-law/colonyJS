@@ -25,7 +25,7 @@ export default class ColonyClient extends ContractClient {
   generateSecret: ColonyClient.Caller<
     {
       salt: string, // Salt value
-      value: number, // Value to hide
+      value: BigNumber, // Value to hide
     },
     {
       secret: string, // keccak256 hash of joint Salt and Value

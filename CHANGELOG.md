@@ -2,6 +2,14 @@
 
 ## v.NEXT
 
+**Bug fixes**
+
+* BigNumbers are now converted to strings for contract function arguments (`@colony/colony-js-contract-client`)
+
+** Documentation**
+
+* Fixed a type definition for `ColonyClient.generateSecret` (`@colony/colony-js-client`)
+
 ## v1.1.4
 
 **Documentation**
