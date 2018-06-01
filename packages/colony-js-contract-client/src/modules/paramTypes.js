@@ -34,7 +34,9 @@ const PARAM_TYPE_MAP: {
       }
       return null;
     },
-    convertInput: passThrough,
+    convertInput(value: BigNumber) {
+      return value.toString();
+    },
   },
   boolean: {
     validate: isBoolean,

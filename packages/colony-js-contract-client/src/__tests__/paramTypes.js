@@ -67,7 +67,7 @@ describe('Parameter types', () => {
     expect(convertOutputValue(null, 'bignumber')).toBe(null);
 
     // Conversion
-    expect(convertInputValue(bn, 'bignumber')).toBe(bn);
+    expect(convertInputValue(bn, 'bignumber')).toBe('1');
   });
 
   test('Booleans are handled properly', () => {
