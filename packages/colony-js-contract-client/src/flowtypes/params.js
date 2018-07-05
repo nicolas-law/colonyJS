@@ -9,6 +9,7 @@ export type ParamTypes =
   | 'ipfsHash'
   | 'number'
   | 'tokenAddress'
+  | 'role' // XXX this custom type is defined elsewhere (colony-js-client)
   | 'string';
 
 // [param name, param type, default value (optional)]
